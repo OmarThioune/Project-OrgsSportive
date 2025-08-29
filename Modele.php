@@ -15,7 +15,7 @@ function getSport() {
 }
 
 // Renvoie les informations sur un article
-function getArticle($idSport) {
+function getAsport($idSport) {
     $bdd = getBdd();
     $sport = $bdd->prepare('select * from sports'
             . ' where ID=?');
