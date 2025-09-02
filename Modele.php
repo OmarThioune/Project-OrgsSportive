@@ -34,4 +34,3 @@ function getTeams($idSport) {
     $teams->execute(array($idSport));
     return $teams;
 }
-
