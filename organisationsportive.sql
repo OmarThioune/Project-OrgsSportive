@@ -126,3 +126,16 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- Insertion dans la table `sports`
+INSERT INTO sports (name, description) VALUES 
+('soccer', 'Jeu joué entre deux équipes de 11 joueurs avec un ballon rond'),
+('hockey', 'Jeu sur glace avec crosse et palet'),
+('basketball', 'Jeu avec ballon et panier entre deux équipes de 5 joueurs');
+
+-- Insertion dans la table `teams`
+-- On suppose que les IDs des sports sont 1, 2, 3 dans cet ordre, sinon utilise une sous-requête
+INSERT INTO teams (name, stadium, sport_id) VALUES
+('Rouge', 'Stade Rouge', (SELECT id FROM sports WHERE name = 'soccer')),
+('Bleu', 'Aréna Bleue', (SELECT id FROM sports WHERE name = 'hockey')),
+('Vert', 'Salle Verte', (SELECT id FROM sports WHERE name = 'basketball'));
