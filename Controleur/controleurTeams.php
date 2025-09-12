@@ -1,41 +1,42 @@
 <?php
-// require les fichiers necessaires
-require_once 'Framework/Controleur.php';
-require_once 'Modele/Teams.php';
-require_once 'Modele/Sports.php';
-//Controleur des equipes
-class ControleurTeams extends Controleur{
-    //attributs prives
-    private $sports;
-    private $teams;
-    //constructeur
-    public function __construct(){
-        $this->sports = new Sports();
-        $this->teams = new Teams();
+
+require_once 'Framework/Modele.php';
+
+class Teams extends Modele {
+
+
+    public function getTeams() {
+        $sql = 'select * from teamss order by ID desc';
+        $teams = $this->executerRequete($sql);
+        return $sports;
     }
-    //methode index
-    // affiche la liste des equipes
-    public function index(): void{
-        $sports = $this->sports->getSports();
-        $this->genererVue(['sports' => $sports]);
+
+ 
+    public function getAteam($idTeams) {
+        $sql = 'select * from teams where ID=?';
+        $teams = $this->executerRequete($sql, array($idTeams));
+        if ($teams->rowCount() == 1)
+            return $teams->fetch();  // Accès à la première ligne de résultat
+        else
+            throw new Exception("Aucun équipe ne correspond à l'identifiant '$idTeams'");
     }
-    //methode pour afficher un sport en particulier
-    public function getASport($idSport): void{
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
+
+    public function setTeams($teams) {
+        $sql = 'INSERT INTO teams (name , stadium) VALUES(?, ?)';
+        $result = $this->executerRequete($sql, [$teams['name'] , $teams['stadium']]);
+        return $result;
     }
-    //methode pour afficher les equipes d'un sport en particulier
-    public function setSport(): void{
-        $this->genererVue();
-    }    
-    //methode pour afficher le formulaire de creation d'un nouveau sport
-    public function modifierSport($idSport): void{
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
+
+    public function updateTeams($teams) {
+        $sql = 'UPDATE teams SET name = ?, stadium = ?';
+        $result = $this->executerRequete($sql, [$teams['name'], $teams['stadium']]);
+        return $result; 
     }
-    //methode pour effacer un sport
-    public function deleteSport($idSport): void{
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
+
+    public function DeleteTeams($teams) {
+        $sql = 'DELETE teams WHERE id = ?';
+        $result = $this->executerRequete($sql, [$teams['name'], $teams['stadium']]);
+        return $result; 
     }
+
 }
