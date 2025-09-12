@@ -35,7 +35,7 @@ class Sports extends Modele {
 
     public function DeleteSport($sport) {
         $sql = 'DELETE sports WHERE id = ?';
-        $result = $this->executerRequete($sql, [$sport['name'], $sport['description']]);
+        $result = $this->executerRequete($sql, [$id]);
         return $result; 
     }
 
