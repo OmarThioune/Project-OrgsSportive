@@ -16,8 +16,8 @@ class ControleurTeams extends Controleur{
     //methode index
     // affiche la liste des equipes
     public function index(): void{
-        $teams = $this->teams->getTeams();
-        $this->genererVue(['teams' => $teams]);
+        $sports = $this->sports->getSports();
+        $this->genererVue(['sports' => $sports]);
     }
     //methode pour afficher un sport en particulier
     public function getASport($idSport): void{
