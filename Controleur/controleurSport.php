@@ -29,7 +29,7 @@ class ControleurSport extends Controleur{
         $this->genererVue();
     }    
     //methode pour afficher le formulaire de creation d'un nouveau sport
-    public function modifierSport($idSport): void{
+    public function updateSport($idSport): void{
         $sport = $this->sports->getASport($idSport);
         $this->genererVue(['sport' => $sport]);
     }
