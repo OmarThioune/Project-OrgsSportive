@@ -1,7 +1,6 @@
 <?php
 
 require_once 'Framework/Modele.php';
-//Ici j'ai changer class Article par Sports
 class Sports extends Modele {
 
 
