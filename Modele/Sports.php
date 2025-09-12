@@ -2,7 +2,7 @@
 
 require_once 'Framework/Modele.php';
 
-class Article extends Modele {
+class Sport extends Modele {
 
 
     public function getSports() {
