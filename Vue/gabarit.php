@@ -3,6 +3,7 @@
 
     <head>
         <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="Contenu/styles.css" />
         <title>Organisation sportive</title>
 
     </head>

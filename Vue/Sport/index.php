@@ -1,7 +1,9 @@
+
 <?php $this->titre = 'Organisme de sport'; ?>
 
+
 <a href="Sport/CreateSport">
-    <h2 class="titreArticle">Ajouter un nouveau sport</h2>
+    <h2 class="flash">Ajouter un nouveau sport</h2>
 </a>
 <?php foreach ($sports as $sport):
     ?>
