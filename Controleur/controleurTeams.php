@@ -3,7 +3,7 @@
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Teams.php';
 require_once 'Modele/Sports.php';
-//Controleur des equipes
+//Controleur des sports
 class ControleurTeams extends Controleur{
     //attributs prives
     private $sports;
@@ -16,26 +16,26 @@ class ControleurTeams extends Controleur{
     //methode index
     // affiche la liste des equipes
     public function index(): void{
-        $sports = $this->sports->getSports();
-        $this->genererVue(['sports' => $sports]);
+        $teams = $this->teams->getTeams();
+        $this->genererVue(['teams' => $teams]);
     }
-    //methode pour afficher un sport en particulier
-    public function getASport($idSport): void{
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
+    //methode pour afficher une equipe en particulier
+    public function getATeam($idTeam): void{
+        $team = $this->teams->getATeam($idTeam);
+        $this->genererVue(['team' => $team]);
     }
     //methode pour afficher les equipes d'un sport en particulier
-    public function setSport(): void{
+    public function setTeam(): void{
         $this->genererVue();
     }    
     //methode pour afficher le formulaire de creation d'un nouveau sport
-    public function modifierSport($idSport): void{
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
+    public function updateTeams($idTeam): void{
+        $team = $this->teams->getATeam($idTeam);
+        $this->genererVue(['team' => $team]);
     }
-    //methode pour effacer un sport
-    public function deleteSport($idSport): void{
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
+    //methode pour effacer une equipe
+    public function deleteTeam($idTeam): void{
+        $team = $this->teams->getATeam($idTeam);
+        $this->genererVue(['team' => $team]);
     }
 }
