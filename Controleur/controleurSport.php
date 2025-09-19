@@ -29,37 +29,5 @@ class ControleurSport extends Controleur {
         $this->genererVue(['sport' => $sport]);
     }
 
-    // Méthode pour afficher les équipes d'un sport en particulier
-    public function setSport(): void {
-        $this->genererVue();
-    }    
 
-public function updateSport(): void {
-    $idSport = $this->requete->getParametre('id');  // récupération de l'ID
-
-    if (!$idSport) {
-        // Aucun ID fourni → afficher message d'erreur
-        $message = "Aucun identifiant de sport fourni pour la modification.";
-        $this->genererVue(['message' => $message], 'Erreur'); // tu peux créer une vue Erreur.php
-        return; // arrêter l’exécution
-    }
-
-    try {
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
-    } catch (Exception $e) {
-        // ID fourni mais aucun sport trouvé
-        $message = $e->getMessage();
-        $this->genererVue(['message' => $message], 'Erreur');
-    }
-}
-
-
-
-    // Méthode pour effacer un sport
-    public function deleteSport(): void {
-        $idSport = $this->requete->getParametre("id");  // récupération depuis la requête
-        $sport = $this->sports->getASport($idSport);
-        $this->genererVue(['sport' => $sport]);
-    }
 }

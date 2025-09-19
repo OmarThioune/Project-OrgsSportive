@@ -3,10 +3,9 @@
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Teams.php';
 require_once 'Modele/Sports.php';
-require_once 'Controleur/ControleurAdmin.php';
 
 // Controleur des sports
-class ControleurSport extends Controleur {
+class ControleurAdminSportEE extends ControleurAdmin {
     // Attributs privés
     private $sports;
     private $teams;
@@ -30,10 +29,7 @@ class ControleurSport extends Controleur {
         $this->genererVue(['sport' => $sport]);
     }
 
-    // Méthode pour afficher les équipes d'un sport en particulier
-    public function setSport(): void {
-        $this->genererVue();
-    }    
+
 
 public function updateSport(): void {
     $idSport = $this->requete->getParametre('id');  // récupération de l'ID

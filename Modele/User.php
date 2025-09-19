@@ -33,8 +33,8 @@ class Utilisateur extends Modele {
      */
     public function getUtilisateur($login, $mdp)
     {
-        $sql = "select id, nom, identifiant, mot_de_passe 
-            from utilisateurs where identifiant = ? and mot_de_passe = ?";
+        $sql = "select id, name, password 
+            from utilisateurs where name = ? and password = ?";
         $utilisateur = $this->executerRequete($sql, array($login, $mdp));
         if ($utilisateur->rowCount() == 1)
             return $utilisateur->fetch();  // Accès à la première ligne de résultat

@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Framework/Controleur.php';
-require_once 'Modele/Utilisateur.php';
+require_once 'Modele/User.php';
 
 /**
  * Contrôleur gérant la connexion au site
@@ -13,7 +13,7 @@ class ControleurUtilisateurs extends Controleur {
     private $utilisateur;
 
     public function __construct() {
-        $this->utilisateur = new Utilisateur();
+        $this->utilisateur = new User();
     }
 
     public function index() {
@@ -27,15 +27,15 @@ class ControleurUtilisateurs extends Controleur {
             $mdp = $this->requete->getParametre("mdp");
             if ($this->utilisateur->connecter($login, $mdp)) {
                 $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
-                $this->requete->getSession()->setAttribut("utilisateur", $utilisateur);
+                $this->requete->getSession()->setAttribut("users", $utilisateur);
                 // Éliminer un code d'erreur éventuel
                 if ($this->requete->getSession()->existeAttribut('erreur')) {
                     $this->requete->getsession()->setAttribut('erreur', '');
                 }
-                $this->rediriger("AdminArticles");
+                $this->rediriger("AdminSport");
             } else {
                 $this->requete->getSession()->setAttribut('erreur', 'mdp');
-                $this->rediriger('Utilisateurs');
+                $this->rediriger('Users');
             }
         } else
             throw new Exception("Action impossible : login ou mot de passe non défini");

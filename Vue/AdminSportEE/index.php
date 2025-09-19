@@ -1,5 +1,3 @@
-<?php $this->titre = 'Organisme de sport'; ?>
-
 <?php if (!empty($sports)): ?>
     <table class="table-sports">
         <thead>
@@ -7,6 +5,7 @@
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Équipes</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +25,14 @@
                     <?php else: ?>
                         <em>Aucune équipe</em>
                     <?php endif; ?>
+                </td>
+                <td>
+                    <a href="AdminSportEE/Edit/<?= $sport['id'] ?>" class="btn modifier">Modifier</a>
+                    <a href="AdminSportA/Delete/<?= $sport['id'] ?>" 
+                       class="btn supprimer"
+                       onclick="return confirm('Voulez-vous vraiment supprimer le sport <?= htmlspecialchars($sport['name']) ?> ?');">
+                       Supprimer
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>
