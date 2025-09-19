@@ -3,6 +3,7 @@
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Teams.php';
 require_once 'Modele/Sports.php';
+require_once 'Controleur/ControleurAdmin.php';
 
 // Controleur des sports
 class ControleurAdminSportEE extends ControleurAdmin {
@@ -51,12 +52,16 @@ public function updateSport(): void {
     }
 }
 
+    public function getATeam($idTeam): void{
+        $team = $this->teams->getATeam($idTeam);
+        $this->genererVue(['team' => $team]);
+    }
 
 
     // Méthode pour effacer un sport
-    public function deleteSport(): void {
+    public function deleteTeams(): void {
         $idSport = $this->requete->getParametre("id");  // récupération depuis la requête
-        $sport = $this->sports->getASport($idSport);
+        $sport = $this->sports->getATeam($idSport);
         $this->genererVue(['sport' => $sport]);
     }
 }

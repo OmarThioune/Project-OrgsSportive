@@ -19,6 +19,11 @@ class ControleurSport extends Controleur {
     // Méthode index - affiche la liste des sports
     public function index(): void {
         $sports = $this->sports->getSports();
+
+        foreach ($sports as &$sport) {
+            $sport['teams'] = $this->teams->getTeams($sport['id']);
+        }
+
         $this->genererVue(['sports' => $sports]);
     }
 
@@ -28,6 +33,8 @@ class ControleurSport extends Controleur {
         $sport = $this->sports->getASport($idSport);
         $this->genererVue(['sport' => $sport]);
     }
+
+    
 
 
 }

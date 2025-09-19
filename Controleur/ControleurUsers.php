@@ -8,7 +8,7 @@ require_once 'Modele/User.php';
  *
  * @author Baptiste Pesquet
  */
-class ControleurUtilisateurs extends Controleur {
+class ControleurUsers extends Controleur {
 
     private $utilisateur;
 
@@ -32,7 +32,7 @@ class ControleurUtilisateurs extends Controleur {
                 if ($this->requete->getSession()->existeAttribut('erreur')) {
                     $this->requete->getsession()->setAttribut('erreur', '');
                 }
-                $this->rediriger("AdminSport");
+                $this->rediriger("AdminSportEE");
             } else {
                 $this->requete->getSession()->setAttribut('erreur', 'mdp');
                 $this->rediriger('Users');

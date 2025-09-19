@@ -3,6 +3,8 @@ require_once 'Framework/Modele.php';
 
 class Sports extends Modele {
 
+
+
 public function getSports() {
     $sql = 'SELECT * FROM sports ORDER BY id DESC';
     $sports = $this->executerRequete($sql);
