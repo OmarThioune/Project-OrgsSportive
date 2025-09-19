@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
 
@@ -14,8 +15,8 @@
         <header class="site-header">
             <h1>Organisation Sportive</h1>
             <ul class="nav">
-                <li><a href="index.php?action=voirAPropos">&Agrave; propos</a></li>
-                  <li><a href="index.php?action=voirConnexion">&Agrave; Connexion</a></li>
+                <li><a href="/Vue/APropos/aPropos.php">&Agrave; propos</a></li>
+                <li><a href="Users">&Agrave; Connexion</a></li>
             </ul>
         </header>
 
