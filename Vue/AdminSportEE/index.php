@@ -34,11 +34,6 @@
                 </td>
                 <td>
                     <a href="AdminSportEE/Edit/<?= $sport['id'] ?>" class="btn modifier">Modifier</a>
-                    <a href="AdminSportA/Delete/<?= $sport['id'] ?>" 
-                       class="btn supprimer"
-                       onclick="return confirm('Voulez-vous vraiment supprimer le sport <?= htmlspecialchars($sport['name']) ?> ?');">
-                       Supprimer
-                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>

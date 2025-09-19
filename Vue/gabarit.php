@@ -15,7 +15,7 @@
             <h1>Organisation Sportive</h1>
             <ul class="nav">
                 <li><a href="index.php?action=voirAPropos">&Agrave; propos</a></li>
-                  <li><a href="index.php?action=voirConnexion">&Agrave; Connexion</a></li>
+                  <li><a href="Sport"> Connexion</a></li>
             </ul>
         </header>
 
