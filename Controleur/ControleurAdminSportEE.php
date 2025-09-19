@@ -3,6 +3,7 @@
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Teams.php';
 require_once 'Modele/Sports.php';
+require_once 'Controleur/ControleurAdmin.php';
 
 // Controleur des sports
 class ControleurAdminSportEE extends ControleurAdmin {
