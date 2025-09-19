@@ -27,12 +27,12 @@ class ControleurUsers extends Controleur {
             $mdp = $this->requete->getParametre("mdp");
             if ($this->utilisateur->connecter($login, $mdp)) {
                 $utilisateur = $this->utilisateur->getUtilisateur($login, $mdp);
-                $this->requete->getSession()->setAttribut("users", $utilisateur);
+                $this->requete->getSession()->setAttribut("user", $utilisateur);
                 // Éliminer un code d'erreur éventuel
                 if ($this->requete->getSession()->existeAttribut('erreur')) {
                     $this->requete->getsession()->setAttribut('erreur', '');
                 }
-                $this->rediriger("AdminSportEE");
+                $this->rediriger("AdminSportEE/index");
             } else {
                 $this->requete->getSession()->setAttribut('erreur', 'mdp');
                 $this->rediriger('Users');

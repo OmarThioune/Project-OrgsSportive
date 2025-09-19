@@ -15,13 +15,8 @@
         <header class="site-header">
             <h1>Organisation Sportive</h1>
             <ul class="nav">
-<<<<<<< HEAD
                 <li><a href="/Vue/APropos/aPropos.php">&Agrave; propos</a></li>
                 <li><a href="Users">&Agrave; Connexion</a></li>
-=======
-                <li><a href="index.php?action=voirAPropos">&Agrave; propos</a></li>
-                  <li><a href="Sport"> Connexion</a></li>
->>>>>>> b6c5a26b08338b834105c5d7d081bc03a30cd3eb
             </ul>
         </header>
 

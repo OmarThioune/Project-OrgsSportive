@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 19 sep. 2025 à 19:27
+-- Généré le :  ven. 19 sep. 2025 à 20:27
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.11
 
@@ -79,6 +79,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`, `team_id`) VALUES
+(1, 'user1', 'abc123', 1);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -122,7 +129,7 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
