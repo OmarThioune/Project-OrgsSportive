@@ -1,5 +1,5 @@
 <p>
-    <a href="AdminSportA/CreateSport" class="btn-ajout">
+    <a href="AdminSportA/CreateSporte" class="btn-ajout">
         Ajouter un sport
     </a>
 </p>
@@ -34,6 +34,11 @@
                 </td>
                 <td>
                     <a href="AdminSportEE/Edit/<?= $sport['id'] ?>" class="btn modifier">Modifier</a>
+                    <a href="AdminSportEE/Delete/<?= $sport['id'] ?>" 
+                       class="btn supprimer"
+                       onclick="return confirm('Voulez-vous vraiment supprimer le sport <?= htmlspecialchars($sport['name']) ?> ?');">
+                       Supprimer
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>
