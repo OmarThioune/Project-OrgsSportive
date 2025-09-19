@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 29 août 2025 à 19:20
+-- Généré le :  jeu. 18 sep. 2025 à 16:37
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.11
 
@@ -33,6 +33,15 @@ CREATE TABLE `sports` (
   `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `description` varchar(100) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `sports`
+--
+
+INSERT INTO `sports` (`id`, `name`, `description`) VALUES
+(1, 'soccer', 'Jeu joué entre deux équipes de 11 joueurs avec un ballon rond'),
+(2, 'hockey', 'Jeu sur glace avec crosse et palet'),
+(3, 'basketball', 'Jeu avec ballon et panier entre deux équipes de 5 joueurs');
 
 -- --------------------------------------------------------
 
@@ -92,7 +101,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `sports`
 --
 ALTER TABLE `sports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `teams`
@@ -126,16 +135,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
--- Insertion dans la table `sports`
-INSERT INTO sports (name, description) VALUES 
-('soccer', 'Jeu joué entre deux équipes de 11 joueurs avec un ballon rond'),
-('hockey', 'Jeu sur glace avec crosse et palet'),
-('basketball', 'Jeu avec ballon et panier entre deux équipes de 5 joueurs');
-
--- Insertion dans la table `teams`
--- On suppose que les IDs des sports sont 1, 2, 3 dans cet ordre, sinon utilise une sous-requête
-INSERT INTO teams (name, stadium, sport_id) VALUES
-('Rouge', 'Stade Rouge', (SELECT id FROM sports WHERE name = 'soccer')),
-('Bleu', 'Aréna Bleue', (SELECT id FROM sports WHERE name = 'hockey')),
-('Vert', 'Salle Verte', (SELECT id FROM sports WHERE name = 'basketball'));
