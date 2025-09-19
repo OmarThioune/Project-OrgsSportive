@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 18 sep. 2025 à 16:37
+-- Généré le :  ven. 19 sep. 2025 à 19:27
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.11
 
@@ -56,6 +56,15 @@ CREATE TABLE `teams` (
   `sport_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `teams`
+--
+
+INSERT INTO `teams` (`id`, `name`, `stadium`, `sport_id`) VALUES
+(1, 'Les Spartiates', 'VALHALLA', 1),
+(2, 'Les Chevalier', 'Le Chateau Rouge', 2),
+(3, 'Les Aigles', 'Philly Stadium', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -107,7 +116,7 @@ ALTER TABLE `sports`
 -- AUTO_INCREMENT pour la table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `users`
