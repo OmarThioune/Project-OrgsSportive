@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  ven. 19 sep. 2025 à 19:27
+-- Généré le :  ven. 19 sep. 2025 à 20:27
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.11
 
@@ -71,12 +71,19 @@ INSERT INTO `teams` (`id`, `name`, `stadium`, `sport_id`) VALUES
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `utilisateurs` (
   `id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `team_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `utilisateurs` (`id`, `name`, `password`, `team_id`) VALUES
+(1, 'user1', 'abc123', 1);
 
 --
 -- Index pour les tables déchargées
@@ -98,7 +105,7 @@ ALTER TABLE `teams`
 --
 -- Index pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_users_teams` (`team_id`);
 
@@ -121,8 +128,8 @@ ALTER TABLE `teams`
 --
 -- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `utilisateurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
@@ -137,7 +144,7 @@ ALTER TABLE `teams`
 --
 -- Contraintes pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `utilisateurs`
   ADD CONSTRAINT `fk_users_teams` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 

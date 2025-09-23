@@ -7,7 +7,7 @@ require_once 'Framework/Modele.php';
  *
  * @author Baptiste Pesquet
  */
-class User extends Modele {
+class Utilisateur extends Modele {
 
     /**
      * Vérifie qu'un utilisateur existe dans la BD
@@ -18,7 +18,7 @@ class User extends Modele {
      */
     public function connecter($login, $mdp)
     {
-        $sql = "select id from utilisateurs where identifiant = ? and mot_de_passe = ?";
+        $sql = "select id from utilisateurs where name = ? and password = ?";
         $utilisateur = $this->executerRequete($sql, array($login, $mdp));
         return ($utilisateur->rowCount() == 1);
     }

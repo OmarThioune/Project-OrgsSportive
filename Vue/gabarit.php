@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="Contenu/SEL.css" />
     <title>Organisation sportive</title>
 </head>
-
+    
 <body>
     <div id="global">
 
