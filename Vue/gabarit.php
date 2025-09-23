@@ -16,7 +16,7 @@
             <h1>Organisation Sportive</h1>
             <ul class="nav">
                 <li><a href="/Vue/APropos/aPropos.php">&Agrave; propos</a></li>
-                <li><a href="Users">&Agrave; Connexion</a></li>
+                <li><a href="Utilisateurs">&Agrave; Connexion</a></li>
             </ul>
         </header>
 

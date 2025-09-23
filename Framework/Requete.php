@@ -23,7 +23,6 @@ class Requete {
     public function __construct($parametres) {
         $this->parametres = $parametres;
         $this->session = new Session();
-        $this->getSession()->setAttribut('env', Configuration::get("env"));
     }
 
     /**

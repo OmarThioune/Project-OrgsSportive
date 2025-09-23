@@ -71,7 +71,7 @@ INSERT INTO `teams` (`id`, `name`, `stadium`, `sport_id`) VALUES
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `utilisateurs` (
   `id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `team_id`) VALUES
+INSERT INTO `utilisateurs` (`id`, `name`, `password`, `team_id`) VALUES
 (1, 'user1', 'abc123', 1);
 
 --
@@ -105,7 +105,7 @@ ALTER TABLE `teams`
 --
 -- Index pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_users_teams` (`team_id`);
 
@@ -128,7 +128,7 @@ ALTER TABLE `teams`
 --
 -- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `utilisateurs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -144,7 +144,7 @@ ALTER TABLE `teams`
 --
 -- Contraintes pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `utilisateurs`
   ADD CONSTRAINT `fk_users_teams` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
