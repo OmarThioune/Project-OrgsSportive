@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="Contenu/SEL.css" />
     <title>Organisation sportive</title>
 </head>
-
+    
 <body>
     <div id="global">
 
@@ -15,8 +15,8 @@
         <header class="site-header">
             <h1>Organisation Sportive</h1>
             <ul class="nav">
-                <li><a href="/Vue/APropos/aPropos.php">&Agrave; propos</a></li>
-                <li><a href="Utilisateurs">&Agrave; Connexion</a></li>
+                <li><a href="APropos">&Agrave; propos</a></li>
+                <li><a href="Users">Connexion</a></li>
             </ul>
         </header>
 
