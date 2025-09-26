@@ -16,8 +16,15 @@
             <h1>Organisation Sportive</h1>
             <ul class="nav">
                 <li><a href="APropos">&Agrave; propos</a></li>
-                <li><a href="Utilisateurs">Connexion</a></li>
+                <li><a href="tests.php"><h3>TESTS</h3></a></li>
             </ul>
+            <?php if (isset($utilisateur)) : ?>
+                <h3>Bonjour <?= $utilisateur['nom'] ?>,
+                    <a href="Utilisateurs/deconnecter"><small>[Se déconnecter]</small></a>
+                </h3>
+            <?php else : ?>
+                <h3>[<a href="Utilisateurs">Se connecter</a>] <small>(admin/admin)</small></h3>
+            <?php endif; ?>
         </header>
 
         <div id="contenu">

@@ -7,8 +7,8 @@ require_once 'Modele/Sports.php';
 // Contrôleur des équipes
 class ControleurTeams extends Controleur {
     // Attributs privés
-    private Sports $sports;
-    private Teams $teams;
+    private $sports;
+    private $teams;
 
     // Constructeur
     public function __construct() {

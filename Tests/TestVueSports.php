@@ -42,5 +42,5 @@ $sports = [
     ]
 ];
 
-$vue = new Vue('index', 'Sports'); 
+$vue = new Vue('index', 'Sport'); 
 $vue->generer(['sports' => $sports]);
