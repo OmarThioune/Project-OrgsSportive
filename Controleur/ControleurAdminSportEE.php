@@ -61,7 +61,7 @@ public function updateSport(): void {
     // Méthode pour effacer un sport
     public function deleteTeams(): void {
         $idSport = $this->requete->getParametre("id");  // récupération depuis la requête
-        $sport = $this->sports->getATeam($idSport);
-        $this->genererVue(['sport' => $sport]);
+        $team = $this->teams->getATeam($idSport);
+        $this->genererVue(['team' => $team]);
     }
 }

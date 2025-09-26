@@ -22,5 +22,9 @@ class ControleurAdminSportA extends ControleurAdmin {
         $this->genererVue();
     }    
 
+    // Implémentation de la méthode abstraite index()
+    public function index(): void {
+        $this->genererVue();
+    }
 
 }

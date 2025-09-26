@@ -1,41 +1,57 @@
 <?php
-// require les fichiers necessaires
+// Inclusion des fichiers nécessaires
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Teams.php';
 require_once 'Modele/Sports.php';
-//Controleur des sports
-class ControleurTeams extends Controleur{
-    //attributs prives
-    private $sports;
-    private $teams;
-    //constructeur
-    public function __construct(){
+
+// Contrôleur des équipes
+class ControleurTeams extends Controleur {
+    // Attributs privés
+    private Sports $sports;
+    private Teams $teams;
+
+    // Constructeur
+    public function __construct() {
         $this->sports = new Sports();
         $this->teams = new Teams();
     }
-    //methode index
-    // affiche la liste des equipes
-    public function index(): void{
-        $teams = $this->teams->getTeams();
-        $this->genererVue(['teams' => $teams]);
+
+    // Affiche la liste de toutes les équipes
+    public function index(): void {
+        // Remplacez 1 par l'identifiant du sport souhaité ou récupérez-le dynamiquement
+        $idSport = 1;
+        $listeEquipes = $this->teams->getTeams($idSport);
+        $this->genererVue([
+            'teams' => $listeEquipes
+        ]);
     }
-    //methode pour afficher une equipe en particulier
-    public function getATeam($idTeam): void{
-        $team = $this->teams->getATeam($idTeam);
-        $this->genererVue(['team' => $team]);
+
+    // Affiche une équipe précise
+    public function getATeam(int $id): void {
+        $equipe = $this->teams->getATeam($id);
+        $this->genererVue([
+            'team' => $equipe
+        ]);
     }
-    //methode pour afficher les equipes d'un sport en particulier
-    public function setTeam(): void{
+
+    // Affiche le formulaire pour créer une équipe
+    public function setTeam(): void {
         $this->genererVue();
-    }    
-    //methode pour afficher le formulaire de creation d'un nouveau sport
-    public function updateTeams($idTeam): void{
-        $team = $this->teams->getATeam($idTeam);
-        $this->genererVue(['team' => $team]);
     }
-    //methode pour effacer une equipe
-    public function deleteTeam($idTeam): void{
-        $team = $this->teams->getATeam($idTeam);
-        $this->genererVue(['team' => $team]);
+
+    // Affiche le formulaire pour mettre à jour une équipe
+    public function updateTeams(int $id): void {
+        $equipe = $this->teams->getATeam($id);
+        $this->genererVue([
+            'team' => $equipe
+        ]);
+    }
+
+    // Affiche la vue pour confirmer la suppression d’une équipe
+    public function deleteTeam(int $id): void {
+        $equipe = $this->teams->getATeam($id);
+        $this->genererVue([
+            'team' => $equipe
+        ]);
     }
 }
