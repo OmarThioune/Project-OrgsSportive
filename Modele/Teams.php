@@ -4,12 +4,17 @@ require_once 'Framework/Modele.php';
 
 class Teams extends Modele {
 
-    // Récupérer toutes les équipes d’un sport
-    public function getTeams($idSport) {
-        $sql = 'SELECT * FROM teams WHERE sport_id = ?';
-        $teams = $this->executerRequete($sql, [$idSport]);
-        return $teams->fetchAll();
+    public function getTeams($idSport = null) {
+        if ($idSport) {
+            $sql = 'SELECT * FROM teams WHERE sport_id = ?';
+            $teams = $this->executerRequete($sql, [$idSport]);
+        } else {
+            $sql = 'SELECT * FROM teams';
+            $teams = $this->executerRequete($sql);
+        }
+        return $teams->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
     // Récupérer une équipe par son id
     public function getATeam($id) {

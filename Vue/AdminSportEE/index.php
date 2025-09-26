@@ -1,8 +1,3 @@
-<p>
-    <a href="AdminSportA/CreateSporte" class="btn-ajout">
-        Ajouter un sport
-    </a>
-</p>
 
 <?php if (!empty($sports)): ?>
     <table class="table-sports">
